@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Failures Overview</title>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation"  class="active" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Interac</td>
+      <td>17 Aug 2021, 00:55</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Failures Overview</h2>
+      <p>The following summary displays scenarios that failed.</p>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+        <div class="elements">
+
+<div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_1_2302960839.html">features/HomePage.feature</a>
+    </div>
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_4075208210.html">@debug</a>
+</div>
+
+
+  <span class="lead-duration duration">2.540</span>
+
+
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
+
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Get all tags and verify data is present</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-1" class="collapse collapsable-details  in ">
+
+
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-2">
+
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-2" class="inner-level collapse collapsable-details  in ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">path 'tags'</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">method Get</span>
+
+  <span class="lead-duration duration">2.539</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-3">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details">
+        <pre>00:55:44.357 request:
+1 &gt; GET https://conduit.productionready.io/api/tags
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTgyMjE5LCJ1c2VybmFtZSI6InNhcmF0aGthcmF0ZSIsImV4cCI6MTYzNDM2MDEzN30.kxSThesY9d0uOrJvD8-RNsGZefGvsH95-uqdzSjX1RQ
+1 &gt; Host: conduit.productionready.io
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+00:55:46.894 response time in milliseconds: 2535
+1 &lt; 200
+1 &lt; Date: Tue, 17 Aug 2021 04:55:47 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; cache-control: max-age=0, private, must-revalidate
+1 &lt; etag: W/&quot;59d0aeb1abdc0689c0ccb88e0365e54a&quot;
+1 &lt; status: 200 OK
+1 &lt; vary: Origin
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; x-powered-by: Phusion Passenger 4.0.60
+1 &lt; x-request-id: 0a5e49c3-ffd0-40db-adce-bf673e53d53e
+1 &lt; x-runtime: 2.213377
+1 &lt; x-xss-protection: 1; mode=block
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=NWEvkBf2yfZGayb3RQAwpXzeMAkneKh1Eqi1aXBa7o4ND3CZBTfNkoht5c4iRfmPVGK24A4m4snr255Mm2D5m2X8AdxPx3A%2FB%2FJl%2F99iZxm6olyID9m6QZgpyF4gHFepxsQVL0gP1wTyr4gghw%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 68004fdc0b075b0b-IAD
+1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400, h3=&quot;:443&quot;; ma=86400
+{&quot;tags&quot;:[&quot;&#1057;art&#1086;&#1086;n&quot;,&quot;&#1054;ld\/Y&#1086;ung&quot;,&quot;b&#1086;nd&#1072;g&#1077;&quot;,&quot;&#1042;&#1110;g &#1040;ss&quot;,&quot;&#1052;&#1030;LF&quot;,&quot;h&#1077;nt&#1072;&#1110;&quot;,&quot;&#1042;&#1110;g D&#1110;&#1089;k&quot;,&quot;F&#1077;m&#1072;l&#1077; &#1054;rg&#1072;sm&quot;,&quot;g&#1072;&#1091;&quot;,&quot;B&#1110;g &#1058;&#1110;ts&quot;,&quot;&#1040;m&#1072;t&#1077;ur&quot;,&quot;Thr&#1077;&#1077;s&#1086;m&#1077;&quot;,&quot;&#1072;n&#1072;l&quot;,&quot;J&#1072;p&#1072;n&#1077;s&#1077;&quot;,&quot;L&#1077;sb&#1110;&#1072;n&quot;,&quot;&#1088;ubl&#1110;&#1089;&quot;,&quot;&#1045;b&#1086;n&#1091;&quot;,&quot;T&#1077;&#1077;n&quot;,&quot;M&#1072;tur&#1077;&quot;,&quot;russ&#1110;&#1072;n&quot;]}
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then failed">
+  <span class="keyword indention">Then</span>
+  <span class="name">match response.tags contains ['HITLER','SIDA']</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>match</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>match failed: CONTAINS
+  $ | actual does not contain expected | actual array does not contain expected item - HITLER (LIST:LIST)
+  [&quot;&#1057;art&#1086;&#1086;n&quot;,&quot;&#1054;ld/Y&#1086;ung&quot;,&quot;b&#1086;nd&#1072;g&#1077;&quot;,&quot;&#1042;&#1110;g &#1040;ss&quot;,&quot;&#1052;&#1030;LF&quot;,&quot;h&#1077;nt&#1072;&#1110;&quot;,&quot;&#1042;&#1110;g D&#1110;&#1089;k&quot;,&quot;F&#1077;m&#1072;l&#1077; &#1054;rg&#1072;sm&quot;,&quot;g&#1072;&#1091;&quot;,&quot;B&#1110;g &#1058;&#1110;ts&quot;,&quot;&#1040;m&#1072;t&#1077;ur&quot;,&quot;Thr&#1077;&#1077;s&#1086;m&#1077;&quot;,&quot;&#1072;n&#1072;l&quot;,&quot;J&#1072;p&#1072;n&#1077;s&#1077;&quot;,&quot;L&#1077;sb&#1110;&#1072;n&quot;,&quot;&#1088;ubl&#1110;&#1089;&quot;,&quot;&#1045;b&#1086;n&#1091;&quot;,&quot;T&#1077;&#1077;n&quot;,&quot;M&#1072;tur&#1077;&quot;,&quot;russ&#1110;&#1072;n&quot;]
+  [&quot;HITLER&quot;,&quot;SIDA&quot;]
+
+    $[19] | not equal (STRING:STRING)
+    'russ&#1110;&#1072;n'
+    'HITLER'
+
+    $[18] | not equal (STRING:STRING)
+    'M&#1072;tur&#1077;'
+    'HITLER'
+
+    $[17] | not equal (STRING:STRING)
+    'T&#1077;&#1077;n'
+    'HITLER'
+
+    $[16] | not equal (STRING:STRING)
+    '&#1045;b&#1086;n&#1091;'
+    'HITLER'
+
+    $[15] | not equal (STRING:STRING)
+    '&#1088;ubl&#1110;&#1089;'
+    'HITLER'
+
+    $[14] | not equal (STRING:STRING)
+    'L&#1077;sb&#1110;&#1072;n'
+    'HITLER'
+
+    $[13] | not equal (STRING:STRING)
+    'J&#1072;p&#1072;n&#1077;s&#1077;'
+    'HITLER'
+
+    $[12] | not equal (STRING:STRING)
+    '&#1072;n&#1072;l'
+    'HITLER'
+
+    $[11] | not equal (STRING:STRING)
+    'Thr&#1077;&#1077;s&#1086;m&#1077;'
+    'HITLER'
+
+    $[10] | not equal (STRING:STRING)
+    '&#1040;m&#1072;t&#1077;ur'
+    'HITLER'
+
+    $[9] | not equal (STRING:STRING)
+    'B&#1110;g &#1058;&#1110;ts'
+    'HITLER'
+
+    $[8] | not equal (STRING:STRING)
+    'g&#1072;&#1091;'
+    'HITLER'
+
+    $[7] | not equal (STRING:STRING)
+    'F&#1077;m&#1072;l&#1077; &#1054;rg&#1072;sm'
+    'HITLER'
+
+    $[6] | not equal (STRING:STRING)
+    '&#1042;&#1110;g D&#1110;&#1089;k'
+    'HITLER'
+
+    $[5] | not equal (STRING:STRING)
+    'h&#1077;nt&#1072;&#1110;'
+    'HITLER'
+
+    $[4] | not equal (STRING:STRING)
+    '&#1052;&#1030;LF'
+    'HITLER'
+
+    $[3] | not equal (STRING:STRING)
+    '&#1042;&#1110;g &#1040;ss'
+    'HITLER'
+
+    $[2] | not equal (STRING:STRING)
+    'b&#1086;nd&#1072;g&#1077;'
+    'HITLER'
+
+    $[1] | not equal (STRING:STRING)
+    '&#1054;ld/Y&#1086;ung'
+    'HITLER'
+
+    $[0] | not equal (STRING:STRING)
+    '&#1057;art&#1086;&#1086;n'
+    'HITLER'
+
+classpath:features/HomePage.feature:18</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-5">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-5" class="collapse collapsable-details">
+        <pre>00:55:46.897 classpath:features/HomePage.feature:18
+Then match response.tags contains ['HITLER','SIDA']
+match failed: CONTAINS
+  $ | actual does not contain expected | actual array does not contain expected item - HITLER (LIST:LIST)
+  [&quot;&#1057;art&#1086;&#1086;n&quot;,&quot;&#1054;ld/Y&#1086;ung&quot;,&quot;b&#1086;nd&#1072;g&#1077;&quot;,&quot;&#1042;&#1110;g &#1040;ss&quot;,&quot;&#1052;&#1030;LF&quot;,&quot;h&#1077;nt&#1072;&#1110;&quot;,&quot;&#1042;&#1110;g D&#1110;&#1089;k&quot;,&quot;F&#1077;m&#1072;l&#1077; &#1054;rg&#1072;sm&quot;,&quot;g&#1072;&#1091;&quot;,&quot;B&#1110;g &#1058;&#1110;ts&quot;,&quot;&#1040;m&#1072;t&#1077;ur&quot;,&quot;Thr&#1077;&#1077;s&#1086;m&#1077;&quot;,&quot;&#1072;n&#1072;l&quot;,&quot;J&#1072;p&#1072;n&#1077;s&#1077;&quot;,&quot;L&#1077;sb&#1110;&#1072;n&quot;,&quot;&#1088;ubl&#1110;&#1089;&quot;,&quot;&#1045;b&#1086;n&#1091;&quot;,&quot;T&#1077;&#1077;n&quot;,&quot;M&#1072;tur&#1077;&quot;,&quot;russ&#1110;&#1072;n&quot;]
+  [&quot;HITLER&quot;,&quot;SIDA&quot;]
+
+    $[19] | not equal (STRING:STRING)
+    'russ&#1110;&#1072;n'
+    'HITLER'
+
+    $[18] | not equal (STRING:STRING)
+    'M&#1072;tur&#1077;'
+    'HITLER'
+
+    $[17] | not equal (STRING:STRING)
+    'T&#1077;&#1077;n'
+    'HITLER'
+
+    $[16] | not equal (STRING:STRING)
+    '&#1045;b&#1086;n&#1091;'
+    'HITLER'
+
+    $[15] | not equal (STRING:STRING)
+    '&#1088;ubl&#1110;&#1089;'
+    'HITLER'
+
+    $[14] | not equal (STRING:STRING)
+    'L&#1077;sb&#1110;&#1072;n'
+    'HITLER'
+
+    $[13] | not equal (STRING:STRING)
+    'J&#1072;p&#1072;n&#1077;s&#1077;'
+    'HITLER'
+
+    $[12] | not equal (STRING:STRING)
+    '&#1072;n&#1072;l'
+    'HITLER'
+
+    $[11] | not equal (STRING:STRING)
+    'Thr&#1077;&#1077;s&#1086;m&#1077;'
+    'HITLER'
+
+    $[10] | not equal (STRING:STRING)
+    '&#1040;m&#1072;t&#1077;ur'
+    'HITLER'
+
+    $[9] | not equal (STRING:STRING)
+    'B&#1110;g &#1058;&#1110;ts'
+    'HITLER'
+
+    $[8] | not equal (STRING:STRING)
+    'g&#1072;&#1091;'
+    'HITLER'
+
+    $[7] | not equal (STRING:STRING)
+    'F&#1077;m&#1072;l&#1077; &#1054;rg&#1072;sm'
+    'HITLER'
+
+    $[6] | not equal (STRING:STRING)
+    '&#1042;&#1110;g D&#1110;&#1089;k'
+    'HITLER'
+
+    $[5] | not equal (STRING:STRING)
+    'h&#1077;nt&#1072;&#1110;'
+    'HITLER'
+
+    $[4] | not equal (STRING:STRING)
+    '&#1052;&#1030;LF'
+    'HITLER'
+
+    $[3] | not equal (STRING:STRING)
+    '&#1042;&#1110;g &#1040;ss'
+    'HITLER'
+
+    $[2] | not equal (STRING:STRING)
+    'b&#1086;nd&#1072;g&#1077;'
+    'HITLER'
+
+    $[1] | not equal (STRING:STRING)
+    '&#1054;ld/Y&#1086;ung'
+    'HITLER'
+
+    $[0] | not equal (STRING:STRING)
+    '&#1057;art&#1086;&#1086;n'
+    'HITLER'
+
+classpath:features/HomePage.feature:18
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">match response.tags contains any ['meat','drink','Hu&zwnj;Man&zwnj;Ity']</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">match response.tags !contains &quot;sarath&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">match response.tags == &quot;#array&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">match each response.tags == &quot;#string&quot;</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

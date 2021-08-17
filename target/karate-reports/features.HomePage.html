@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <title>features.HomePage</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="karate-summary.html">
+      <img src="karate-logo.svg" alt="Karate"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">2</div>
+      <div id="nav-fail" class="bg-danger">1</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2021-08-17 12:55:48 AM</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:8]"><span>[1:8]</span> <span>check the status code is 200</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[2:14]"><span>[2:14]</span> <span>Get all tags and verify data is present</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:26]"><span>[3:26]</span> <span>Get 5 articles from the page      #url use is https://conduit.productionready.io/api/articles?limit=5&amp;offset=0</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/HomePage.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Home page tests</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:8]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">debug</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:8]</span>
+                <span class="scenario-name">check the status code is 200</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>2496</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:8]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:8]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url apiBaseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.6">00:55:41.852 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;tags&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method Get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2496</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.10">00:55:41.855 request:
+1 &gt; GET https://conduit.productionready.io/api/tags
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTgyMjE5LCJ1c2VybmFtZSI6InNhcmF0aGthcmF0ZSIsImV4cCI6MTYzNDM2MDEzN30.kxSThesY9d0uOrJvD8-RNsGZefGvsH95-uqdzSjX1RQ
+1 &gt; Host: conduit.productionready.io
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+00:55:44.348 response time in milliseconds: 2492
+1 &lt; 200
+1 &lt; Date: Tue, 17 Aug 2021 04:55:45 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; cache-control: max-age=0, private, must-revalidate
+1 &lt; etag: W/&quot;59d0aeb1abdc0689c0ccb88e0365e54a&quot;
+1 &lt; status: 200 OK
+1 &lt; vary: Origin
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; x-powered-by: Phusion Passenger 4.0.60
+1 &lt; x-request-id: 977edbe7-8fd1-455f-aa71-d064684e2093
+1 &lt; x-runtime: 2.154111
+1 &lt; x-xss-protection: 1; mode=block
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=1APIosejBHqHenQJK9xGXdmob6iJEMWWBiXaqhwiLrsKnPsG9Z55PY0T80eGmPU5tXpEaWrMZqU%2FyJ0yKEPC5T%2BIQkAJOohCFfT4UZNiSutyGhebqTmDWcGD%2FjQqY3yLvwm6IULXG%2B02eNYNhw%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 68004fcc6f295a57-IAD
+1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400, h3=&quot;:443&quot;; ma=86400
+{&quot;tags&quot;:[&quot;Сartооn&quot;,&quot;Оld\/Yоung&quot;,&quot;bоndаgе&quot;,&quot;Віg Аss&quot;,&quot;МІLF&quot;,&quot;hеntаі&quot;,&quot;Віg Dісk&quot;,&quot;Fеmаlе Оrgаsm&quot;,&quot;gау&quot;,&quot;Bіg Тіts&quot;,&quot;Аmаtеur&quot;,&quot;Thrееsоmе&quot;,&quot;аnаl&quot;,&quot;Jаpаnеsе&quot;,&quot;Lеsbіаn&quot;,&quot;рublіс&quot;,&quot;Еbоnу&quot;,&quot;Tееn&quot;,&quot;Mаturе&quot;,&quot;russіаn&quot;]}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:14]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">debug</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:14]</span>
+                <span class="scenario-name">Get all tags and verify data is present</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>2540</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:14]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:14]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url apiBaseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.6">00:55:44.355 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;tags&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref passed">16</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method Get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2539</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.16">00:55:44.357 request:
+1 &gt; GET https://conduit.productionready.io/api/tags
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTgyMjE5LCJ1c2VybmFtZSI6InNhcmF0aGthcmF0ZSIsImV4cCI6MTYzNDM2MDEzN30.kxSThesY9d0uOrJvD8-RNsGZefGvsH95-uqdzSjX1RQ
+1 &gt; Host: conduit.productionready.io
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+00:55:46.894 response time in milliseconds: 2535
+1 &lt; 200
+1 &lt; Date: Tue, 17 Aug 2021 04:55:47 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; cache-control: max-age=0, private, must-revalidate
+1 &lt; etag: W/&quot;59d0aeb1abdc0689c0ccb88e0365e54a&quot;
+1 &lt; status: 200 OK
+1 &lt; vary: Origin
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; x-powered-by: Phusion Passenger 4.0.60
+1 &lt; x-request-id: 0a5e49c3-ffd0-40db-adce-bf673e53d53e
+1 &lt; x-runtime: 2.213377
+1 &lt; x-xss-protection: 1; mode=block
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=NWEvkBf2yfZGayb3RQAwpXzeMAkneKh1Eqi1aXBa7o4ND3CZBTfNkoht5c4iRfmPVGK24A4m4snr255Mm2D5m2X8AdxPx3A%2FB%2FJl%2F99iZxm6olyID9m6QZgpyF4gHFepxsQVL0gP1wTyr4gghw%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 68004fdc0b075b0b-IAD
+1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400, h3=&quot;:443&quot;; ma=86400
+{&quot;tags&quot;:[&quot;Сartооn&quot;,&quot;Оld\/Yоung&quot;,&quot;bоndаgе&quot;,&quot;Віg Аss&quot;,&quot;МІLF&quot;,&quot;hеntаі&quot;,&quot;Віg Dісk&quot;,&quot;Fеmаlе Оrgаsm&quot;,&quot;gау&quot;,&quot;Bіg Тіts&quot;,&quot;Аmаtеur&quot;,&quot;Thrееsоmе&quot;,&quot;аnаl&quot;,&quot;Jаpаnеsе&quot;,&quot;Lеsbіаn&quot;,&quot;рublіс&quot;,&quot;Еbоnу&quot;,&quot;Tееn&quot;,&quot;Mаturе&quot;,&quot;russіаn&quot;]}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#adding few assertions just to show how we can do assertion easily inside json body</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref failed">18</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>match response.tags contains [&#39;HITLER&#39;,&#39;SIDA&#39;]</span>
+      </div>
+    </div>
+    <div class="time-cell failed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">00:55:46.897 classpath:features/HomePage.feature:18
+Then match response.tags contains [&#39;HITLER&#39;,&#39;SIDA&#39;]
+match failed: CONTAINS
+  $ | actual does not contain expected | actual array does not contain expected item - HITLER (LIST:LIST)
+  [&quot;Сartооn&quot;,&quot;Оld/Yоung&quot;,&quot;bоndаgе&quot;,&quot;Віg Аss&quot;,&quot;МІLF&quot;,&quot;hеntаі&quot;,&quot;Віg Dісk&quot;,&quot;Fеmаlе Оrgаsm&quot;,&quot;gау&quot;,&quot;Bіg Тіts&quot;,&quot;Аmаtеur&quot;,&quot;Thrееsоmе&quot;,&quot;аnаl&quot;,&quot;Jаpаnеsе&quot;,&quot;Lеsbіаn&quot;,&quot;рublіс&quot;,&quot;Еbоnу&quot;,&quot;Tееn&quot;,&quot;Mаturе&quot;,&quot;russіаn&quot;]
+  [&quot;HITLER&quot;,&quot;SIDA&quot;]
+
+    $[19] | not equal (STRING:STRING)
+    &#39;russіаn&#39;
+    &#39;HITLER&#39;
+
+    $[18] | not equal (STRING:STRING)
+    &#39;Mаturе&#39;
+    &#39;HITLER&#39;
+
+    $[17] | not equal (STRING:STRING)
+    &#39;Tееn&#39;
+    &#39;HITLER&#39;
+
+    $[16] | not equal (STRING:STRING)
+    &#39;Еbоnу&#39;
+    &#39;HITLER&#39;
+
+    $[15] | not equal (STRING:STRING)
+    &#39;рublіс&#39;
+    &#39;HITLER&#39;
+
+    $[14] | not equal (STRING:STRING)
+    &#39;Lеsbіаn&#39;
+    &#39;HITLER&#39;
+
+    $[13] | not equal (STRING:STRING)
+    &#39;Jаpаnеsе&#39;
+    &#39;HITLER&#39;
+
+    $[12] | not equal (STRING:STRING)
+    &#39;аnаl&#39;
+    &#39;HITLER&#39;
+
+    $[11] | not equal (STRING:STRING)
+    &#39;Thrееsоmе&#39;
+    &#39;HITLER&#39;
+
+    $[10] | not equal (STRING:STRING)
+    &#39;Аmаtеur&#39;
+    &#39;HITLER&#39;
+
+    $[9] | not equal (STRING:STRING)
+    &#39;Bіg Тіts&#39;
+    &#39;HITLER&#39;
+
+    $[8] | not equal (STRING:STRING)
+    &#39;gау&#39;
+    &#39;HITLER&#39;
+
+    $[7] | not equal (STRING:STRING)
+    &#39;Fеmаlе Оrgаsm&#39;
+    &#39;HITLER&#39;
+
+    $[6] | not equal (STRING:STRING)
+    &#39;Віg Dісk&#39;
+    &#39;HITLER&#39;
+
+    $[5] | not equal (STRING:STRING)
+    &#39;hеntаі&#39;
+    &#39;HITLER&#39;
+
+    $[4] | not equal (STRING:STRING)
+    &#39;МІLF&#39;
+    &#39;HITLER&#39;
+
+    $[3] | not equal (STRING:STRING)
+    &#39;Віg Аss&#39;
+    &#39;HITLER&#39;
+
+    $[2] | not equal (STRING:STRING)
+    &#39;bоndаgе&#39;
+    &#39;HITLER&#39;
+
+    $[1] | not equal (STRING:STRING)
+    &#39;Оld/Yоung&#39;
+    &#39;HITLER&#39;
+
+    $[0] | not equal (STRING:STRING)
+    &#39;Сartооn&#39;
+    &#39;HITLER&#39;
+
+classpath:features/HomePage.feature:18
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref skipped">19</div>
+      
+      <div class="step-cell skipped">
+        <span>Then</span>&nbsp;<span>match response.tags contains any [&#39;meat&#39;,&#39;drink&#39;,&#39;Hu‌Man‌Ity&#39;]</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref skipped">20</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.tags !contains &quot;sarath&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref skipped">21</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.tags == &quot;#array&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.22">
+      <div class="step-ref skipped">22</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match each response.tags == &quot;#string&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:26]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">debug</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:26]</span>
+                <span class="scenario-name">Get 5 articles from the page      #url use is https://conduit.productionready.io/api/articles?limit=5&amp;offset=0</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1200</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:26]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:26]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url apiBaseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.6">00:55:46.900 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def timeValidator = read(&#39;classpath:helpers/timeValidator.js&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">10</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#Given param limit = 5</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#Given param offset = 0</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>params {limit : 5, offset: 0}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;articles&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method Get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1170</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.32">00:55:46.913 request:
+1 &gt; GET https://conduit.productionready.io/api/articles?offset=0&amp;limit=5
+1 &gt; Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTgyMjE5LCJ1c2VybmFtZSI6InNhcmF0aGthcmF0ZSIsImV4cCI6MTYzNDM2MDEzN30.kxSThesY9d0uOrJvD8-RNsGZefGvsH95-uqdzSjX1RQ
+1 &gt; Host: conduit.productionready.io
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+00:55:48.079 response time in milliseconds: 1165
+1 &lt; 200
+1 &lt; Date: Tue, 17 Aug 2021 04:55:48 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; cache-control: max-age=0, private, must-revalidate
+1 &lt; etag: W/&quot;5a6bf04eee47dfacc264ae2b45853f9b&quot;
+1 &lt; status: 200 OK
+1 &lt; vary: Origin
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; x-powered-by: Phusion Passenger 4.0.60
+1 &lt; x-request-id: 32c1189b-bfea-4f41-969b-376a81853403
+1 &lt; x-runtime: 0.827712
+1 &lt; x-xss-protection: 1; mode=block
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=MPmCCIwAybj4DlWUoe8Ic9F1oSpC%2Fwa6s4q%2Bda%2F2FxDS%2FTtfmAyfr8FT9hTGH6x0Asdmizx1dbX1LwoWOUFQKAhx6yAxDfROKjRAdmrJX8jpipM6mwazIA23bCjFjHlZko1mBscNOZ4jktjhxg%3D%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 68004febfb10597f-IAD
+1 &lt; alt-svc: h3-27=&quot;:443&quot;; ma=86400, h3-28=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400, h3=&quot;:443&quot;; ma=86400
+{&quot;articlesCount&quot;:500,&quot;articles&quot;:[{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-08-17T04:55:38.456Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;sarathkarate&quot;},&quot;description&quot;:&quot;Father&quot;,&quot;title&quot;:&quot;Human Intranet Engineer&quot;,&quot;body&quot;:&quot;Rogahnside&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;human-intranet-engineer-m6co8n&quot;,&quot;updatedAt&quot;:&quot;2021-08-17T04:55:38.456Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-08-17T04:37:11.706Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;Karate98765&quot;},&quot;description&quot;:&quot;test new article&quot;,&quot;title&quot;:&quot;My Article&quot;,&quot;body&quot;:&quot;test body article&quot;,&quot;favoritesCount&quot;:3,&quot;slug&quot;:&quot;my-article-6vjkh1&quot;,&quot;updatedAt&quot;:&quot;2021-08-17T04:37:11.706Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-08-17T04:26:31.318Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;Grupo Primo&quot;},&quot;description&quot;:&quot;Best investment and entrepreneur content&quot;,&quot;title&quot;:&quot;Grupo Primo&quot;,&quot;body&quot;:&quot;Follow @thiago.nigro on Instagram&quot;,&quot;favoritesCount&quot;:1,&quot;slug&quot;:&quot;grupo-primo-it0dx&quot;,&quot;updatedAt&quot;:&quot;2021-08-17T04:26:31.318Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[],&quot;createdAt&quot;:&quot;2021-08-17T04:06:17.492Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;Kar1&quot;},&quot;description&quot;:&quot;Norvos&quot;,&quot;title&quot;:&quot;Lorimer&quot;,&quot;body&quot;:&quot;A lion doesn&#39;t concern itself with the opinion of sheep.&quot;,&quot;favoritesCount&quot;:2,&quot;slug&quot;:&quot;lorimer-2ec7v5&quot;,&quot;updatedAt&quot;:&quot;2021-08-17T04:06:17.492Z&quot;,&quot;favorited&quot;:false},{&quot;tagList&quot;:[&quot;test-automation&quot;,&quot;simple&quot;,&quot;cypress&quot;],&quot;createdAt&quot;:&quot;2021-08-17T04:05:41.078Z&quot;,&quot;author&quot;:{&quot;image&quot;:&quot;https:\/\/static.productionready.io\/images\/smiley-cyrus.jpg&quot;,&quot;following&quot;:false,&quot;bio&quot;:null,&quot;username&quot;:&quot;cy182632078&quot;},&quot;description&quot;:&quot;https:\/\/github.com\/helenanull\/cypress-example&quot;,&quot;title&quot;:&quot;Article created by Cypress test&quot;,&quot;body&quot;:&quot;This article is created with Cypress. See code here: https:\/\/github.com\/helenanull\/cypress-example&quot;,&quot;favoritesCount&quot;:0,&quot;slug&quot;:&quot;article-created-by-cypress-test-xzcnx5&quot;,&quot;updatedAt&quot;:&quot;2021-08-17T04:05:41.078Z&quot;,&quot;favorited&quot;:false}]}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#check if array length is 5</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.35">
+      <div class="step-ref passed">35</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.articles == &#39;#[5]&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#checking if value of article count in response is 500</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.articlesCount == 500</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#it checks all the objects not just first using *</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#And match response.articles[*].favoritesCount contains 1</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#check if some bio is null</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.articles[*].author.bio contains null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># we can do the same using  .. so we dont need to go to the exact child element in json object it will check entire json and take</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.44">
+      <div class="step-ref passed">44</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response..bio contains null</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#matching the schema validation, double hash is null or string</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match each response.articles ==</span>
+      </div>
+    </div>
+    <div class="time-cell passed">15</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.47">{
+        &quot;title&quot;: &quot;#string&quot;,
+        &quot;slug&quot;: &quot;#string&quot;,
+        &quot;body&quot;: &quot;#string&quot;,
+        &quot;createdAt&quot;: &quot;#? timeValidator(_)&quot;,
+        &quot;updatedAt&quot;: &quot;#? timeValidator(_)&quot;,
+        &quot;tagList&quot;: &quot;#array&quot;,
+        &quot;description&quot;: &quot;#string&quot;,
+        &quot;author&quot;: {
+        &quot;username&quot;: &quot;#string&quot;,
+        &quot;bio&quot;: &quot;##string&quot;,
+        &quot;image&quot;: &quot;#string&quot;,
+        &quot;following&quot;: &quot;#boolean&quot;
+        },
+        &quot;favorited&quot;: &quot;#boolean&quot;,
+        &quot;favoritesCount&quot;: &quot;#number&quot;
+    }</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

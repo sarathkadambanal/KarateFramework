@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/HomePage[1:8]","start":1627662148395,"end":1627662148399,"title":"features\/HomePage[1:8] 12:22:28.395-12:22:28.399 check the status code is 200","className":"failed"},{"id":2,"group":1,"content":"features\/HomePage[2:14]","start":1627662148404,"end":1627662148406,"title":"features\/HomePage[2:14] 12:22:28.404-12:22:28.406 Get all tags and verify data is present","className":"failed"},{"id":3,"group":1,"content":"features\/HomePage[3:26]","start":1627662148411,"end":1627662148412,"title":"features\/HomePage[3:26] 12:22:28.411-12:22:28.412 Get 5 articles from the page      #url use is https:\/\/conduit.productionready.io\/api\/articles?limit=5&offset=0","className":"failed"},{"id":4,"group":1,"content":"features\/Articles[1:25]","start":1627662117118,"end":1627662147706,"title":"features\/Articles[1:25] 12:21:57.118-12:22:27.706 Create a new article","className":"failed"},{"id":5,"group":1,"content":"features\/Articles[2:35]","start":1627662147712,"end":1627662147718,"title":"features\/Articles[2:35] 12:22:27.712-12:22:27.718 Create an article and delete it","className":"failed"},{"id":6,"group":1,"content":"features\/SignUp[1:14]","start":1627662148502,"end":1627662148505,"title":"features\/SignUp[1:14] 12:22:28.502-12:22:28.505 New user sign up Scenario","className":"failed"},{"id":7,"group":1,"content":"features\/SignUp[2.1:93]","start":1627662148511,"end":1627662148513,"title":"features\/SignUp[2.1:93] 12:22:28.511-12:22:28.513 Validate sign up error messages","className":"failed"},{"id":8,"group":1,"content":"features\/SignUp[2.2:94]","start":1627662148518,"end":1627662148521,"title":"features\/SignUp[2.2:94] 12:22:28.518-12:22:28.521 Validate sign up error messages","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

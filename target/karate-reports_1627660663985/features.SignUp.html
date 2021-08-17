@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <title>features.SignUp</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="karate-summary.html">
+      <img src="karate-logo.svg" alt="Karate"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">0</div>
+      <div id="nav-fail" class="bg-danger">3</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2021-07-30 11:50:01 AM</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item failed">
+            <a href="#[1:14]"><span>[1:14]</span> <span>New user sign up Scenario</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[2.1:93]"><span>[2.1:93]</span> <span>Validate sign up error messages</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[2.2:94]"><span>[2.2:94]</span> <span>Validate sign up error messages</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/SignUp.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">sign up new user</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:14]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:14]</span>
+                <span class="scenario-name">New user sign up Scenario</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>0</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:14]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:14]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def dataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.6">11:50:01.049 karate.env system property was: null 
+11:50:01.049 callSingle() cached result is an exception
+11:50:01.050 classpath:features/SignUp.feature:6
+* def dataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:14]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def timeValidator = read(&#39;classpath:helpers/timeValidator.js&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.7">11:50:01.050 classpath:features/SignUp.feature:7
+* def timeValidator = read(&#39;classpath:helpers/timeValidator.js&#39;)
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:14]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def randomEmail = dataGenerator.getRandomEmail()</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.8">11:50:01.050 classpath:features/SignUp.feature:8
+* def randomEmail = dataGenerator.getRandomEmail()
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:14]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref bg-step">9</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>print randomEmail + &quot;random email&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.9">11:50:01.050 classpath:features/SignUp.feature:9
+* print randomEmail + &quot;random email&quot;
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:14]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref bg-step">10</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def randomUserName = dataGenerator.getRandomUsername()</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.10">11:50:01.050 classpath:features/SignUp.feature:10
+* def randomUserName = dataGenerator.getRandomUsername()
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:14]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>url apiBaseURL</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.11">11:50:01.050 classpath:features/SignUp.feature:11
+* url apiBaseURL
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#Given def userData = {&quot;email&quot;:&quot;karateusersignup1@test.com&quot;, &quot;username&quot;:&quot;sarathprasad1234&quot;}</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#below code is to show how non static java funtions called in feature file to get the values</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># create java script function here</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#		* def jsFunction =</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#		&quot;&quot;&quot;</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#				function() {</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#						var DataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#						var generator = new DataGenerator()</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#						return generator.getRandomUsername2()</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#				}</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#		&quot;&quot;&quot;</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#		* def randomUserName2 = call jsFunction</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># above one finished here</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref failed">37</div>
+      
+      <div class="step-cell failed">
+        <span>Given</span>&nbsp;<span>path &quot;users&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.37">11:50:01.050 classpath:features/SignUp.feature:37
+Given path &quot;users&quot;
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:37
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref failed">38</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.38">{
+	&quot;user&quot;: {
+		&quot;email&quot;: #(randomEmail),
+		&quot;password&quot;: &quot;karate123&quot;, 
+		&quot;username&quot;: #(randomUserName)
+		}
+				
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="0.38">11:50:01.050 classpath:features/SignUp.feature:38
+And request
+&quot;&quot;&quot;
+{
+	&quot;user&quot;: {
+		&quot;email&quot;: #(randomEmail),
+		&quot;password&quot;: &quot;karate123&quot;, 
+		&quot;username&quot;: #(randomUserName)
+		}
+				
+}
+&quot;&quot;&quot;
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:37
+classpath:features/SignUp.feature:38
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref failed">51</div>
+      
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method Post</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.51">11:50:01.050 classpath:features/SignUp.feature:51
+When method Post
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:37
+classpath:features/SignUp.feature:38
+classpath:features/SignUp.feature:51
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.52">
+      <div class="step-ref failed">52</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.52">11:50:01.050 classpath:features/SignUp.feature:52
+Then status 200
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:37
+classpath:features/SignUp.feature:38
+classpath:features/SignUp.feature:51
+classpath:features/SignUp.feature:52
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.53">
+      <div class="step-ref failed">53</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>match response ==</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.53">{
+	&quot;user&quot;: {
+    	&quot;id&quot;: &quot;#number&quot;,
+    	&quot;email&quot;: #(randomEmail),
+   	 	&quot;createdAt&quot;: &quot;#? timeValidator(_)&quot;,
+    	&quot;updatedAt&quot;: &quot;#? timeValidator(_)&quot;,
+   		&quot;username&quot;: #(randomUserName),
+ 	    &quot;bio&quot;: null,
+  	  &quot;image&quot;: null,
+   	  &quot;token&quot;: &quot;#string&quot;
+}
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="0.53">11:50:01.051 classpath:features/SignUp.feature:53
+And match response ==
+&quot;&quot;&quot;
+{
+	&quot;user&quot;: {
+    	&quot;id&quot;: &quot;#number&quot;,
+    	&quot;email&quot;: #(randomEmail),
+   	 	&quot;createdAt&quot;: &quot;#? timeValidator(_)&quot;,
+    	&quot;updatedAt&quot;: &quot;#? timeValidator(_)&quot;,
+   		&quot;username&quot;: #(randomUserName),
+ 	    &quot;bio&quot;: null,
+  	  &quot;image&quot;: null,
+   	  &quot;token&quot;: &quot;#string&quot;
+}
+}
+&quot;&quot;&quot;
+classpath:features/SignUp.feature:14
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:37
+classpath:features/SignUp.feature:38
+classpath:features/SignUp.feature:51
+classpath:features/SignUp.feature:52
+classpath:features/SignUp.feature:53
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.1:93]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">signup</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.1:93]</span>
+                <span class="scenario-name">Validate sign up error messages</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>0</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.1:93]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.1:93]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def dataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.6">11:50:01.059 karate.env system property was: null 
+11:50:01.059 callSingle() cached result is an exception
+11:50:01.060 classpath:features/SignUp.feature:6
+* def dataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:93]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def timeValidator = read(&#39;classpath:helpers/timeValidator.js&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.7">11:50:01.060 classpath:features/SignUp.feature:7
+* def timeValidator = read(&#39;classpath:helpers/timeValidator.js&#39;)
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:93]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def randomEmail = dataGenerator.getRandomEmail()</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.8">11:50:01.061 classpath:features/SignUp.feature:8
+* def randomEmail = dataGenerator.getRandomEmail()
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:93]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.9">
+      <div class="step-ref bg-step">9</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>print randomEmail + &quot;random email&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.9">11:50:01.061 classpath:features/SignUp.feature:9
+* print randomEmail + &quot;random email&quot;
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:93]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.10">
+      <div class="step-ref bg-step">10</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def randomUserName = dataGenerator.getRandomUsername()</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.10">11:50:01.061 classpath:features/SignUp.feature:10
+* def randomUserName = dataGenerator.getRandomUsername()
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:93]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>url apiBaseURL</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.11">11:50:01.061 classpath:features/SignUp.feature:11
+* url apiBaseURL
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.75">
+      <div class="step-ref failed">75</div>
+      
+      <div class="step-cell failed">
+        <span>Given</span>&nbsp;<span>path &quot;users&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.75">11:50:01.061 classpath:features/SignUp.feature:75
+Given path &quot;users&quot;
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.76">
+      <div class="step-ref failed">76</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.76">{
+	&quot;user&quot;: {
+		&quot;email&quot;: &quot;#(randomEmail)&quot;,
+		&quot;password&quot;: &quot;karate123&quot;, 
+		&quot;username&quot;: &quot;Karate1234445&quot;
+		}
+				
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="1.76">11:50:01.061 classpath:features/SignUp.feature:76
+And request
+&quot;&quot;&quot;
+{
+	&quot;user&quot;: {
+		&quot;email&quot;: &quot;#(randomEmail)&quot;,
+		&quot;password&quot;: &quot;karate123&quot;, 
+		&quot;username&quot;: &quot;Karate1234445&quot;
+		}
+				
+}
+&quot;&quot;&quot;
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+classpath:features/SignUp.feature:76
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.88">
+      <div class="step-ref failed">88</div>
+      
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method Post</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.88">11:50:01.061 classpath:features/SignUp.feature:88
+When method Post
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+classpath:features/SignUp.feature:76
+classpath:features/SignUp.feature:88
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.89">
+      <div class="step-ref failed">89</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 422</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.89">11:50:01.062 classpath:features/SignUp.feature:89
+Then status 422
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+classpath:features/SignUp.feature:76
+classpath:features/SignUp.feature:88
+classpath:features/SignUp.feature:89
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.90">
+      <div class="step-ref failed">90</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>match response == {&quot;errors&quot;: {&quot;username&quot;: [&quot;has already been taken&quot;]}}</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.90">11:50:01.062 classpath:features/SignUp.feature:90
+And match response == {&quot;errors&quot;: {&quot;username&quot;: [&quot;has already been taken&quot;]}}
+classpath:features/SignUp.feature:93
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+classpath:features/SignUp.feature:76
+classpath:features/SignUp.feature:88
+classpath:features/SignUp.feature:89
+classpath:features/SignUp.feature:90
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.2:94]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">signup</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.2:94]</span>
+                <span class="scenario-name">Validate sign up error messages</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>0</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.2:94]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.2:94]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def dataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.6">11:50:01.069 karate.env system property was: null 
+11:50:01.069 callSingle() cached result is an exception
+11:50:01.070 classpath:features/SignUp.feature:6
+* def dataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:94]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def timeValidator = read(&#39;classpath:helpers/timeValidator.js&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.7">11:50:01.071 classpath:features/SignUp.feature:7
+* def timeValidator = read(&#39;classpath:helpers/timeValidator.js&#39;)
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:94]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.8">
+      <div class="step-ref bg-step">8</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def randomEmail = dataGenerator.getRandomEmail()</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.8">11:50:01.071 classpath:features/SignUp.feature:8
+* def randomEmail = dataGenerator.getRandomEmail()
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:94]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.9">
+      <div class="step-ref bg-step">9</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>print randomEmail + &quot;random email&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.9">11:50:01.071 classpath:features/SignUp.feature:9
+* print randomEmail + &quot;random email&quot;
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:94]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.10">
+      <div class="step-ref bg-step">10</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>def randomUserName = dataGenerator.getRandomUsername()</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.10">11:50:01.071 classpath:features/SignUp.feature:10
+* def randomUserName = dataGenerator.getRandomUsername()
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.2:94]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>url apiBaseURL</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.11">11:50:01.071 classpath:features/SignUp.feature:11
+* url apiBaseURL
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.75">
+      <div class="step-ref failed">75</div>
+      
+      <div class="step-cell failed">
+        <span>Given</span>&nbsp;<span>path &quot;users&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.75">11:50:01.071 classpath:features/SignUp.feature:75
+Given path &quot;users&quot;
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.76">
+      <div class="step-ref failed">76</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="2.76">{
+	&quot;user&quot;: {
+		&quot;email&quot;: &quot;KarateUser1@test.com&quot;,
+		&quot;password&quot;: &quot;karate123&quot;, 
+		&quot;username&quot;: &quot;#(randomUserName)&quot;
+		}
+				
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="2.76">11:50:01.071 classpath:features/SignUp.feature:76
+And request
+&quot;&quot;&quot;
+{
+	&quot;user&quot;: {
+		&quot;email&quot;: &quot;KarateUser1@test.com&quot;,
+		&quot;password&quot;: &quot;karate123&quot;, 
+		&quot;username&quot;: &quot;#(randomUserName)&quot;
+		}
+				
+}
+&quot;&quot;&quot;
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+classpath:features/SignUp.feature:76
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.88">
+      <div class="step-ref failed">88</div>
+      
+      <div class="step-cell failed">
+        <span>When</span>&nbsp;<span>method Post</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.88">11:50:01.071 classpath:features/SignUp.feature:88
+When method Post
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+classpath:features/SignUp.feature:76
+classpath:features/SignUp.feature:88
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.89">
+      <div class="step-ref failed">89</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 422</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.89">11:50:01.072 classpath:features/SignUp.feature:89
+Then status 422
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+classpath:features/SignUp.feature:76
+classpath:features/SignUp.feature:88
+classpath:features/SignUp.feature:89
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.90">
+      <div class="step-ref failed">90</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>match response == {&quot;errors&quot;: {&quot;email&quot;: [&quot;has already been taken&quot;]}}</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.90">11:50:01.072 classpath:features/SignUp.feature:90
+And match response == {&quot;errors&quot;: {&quot;email&quot;: [&quot;has already been taken&quot;]}}
+classpath:features/SignUp.feature:94
+karate-config.js
+&gt;&gt;&gt;&gt; js failed:
+01: function fn() {
+02:   var env = karate.env; // get system property &#39;karate.env&#39;
+03:   karate.log(&#39;karate.env system property was:&#39;, env);
+04:   if (!env) {
+05:     env = &#39;dev&#39;;
+06:   }
+07:   var config = {
+08:     apiBaseURL: &#39;https://conduit.productionready.io/api/&#39;
+09:   }
+10:   if (env == &#39;dev&#39;) {
+11:     config.userEmail = &#39;karate@testaccount.com&#39;
+12: 	config.userPassword = &#39;karate123&#39;
+13:   } else if (env == &#39;qa&#39;) {
+14:     // customize
+15:   }
+16: 
+17: 	var accessToken = karate.callSingle(&#39;classpath:helpers/CreateToken.feature&#39;, config).authToken
+18: 	karate.configure(&#39;headers&#39;, {Authorization: &#39;Token &#39; + accessToken })
+19: 
+20:   return config;
+21: }
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: http call failed after 30469 milliseconds for url: https://conduit.productionready.io/api/users/login
+classpath:helpers/CreateToken.feature:9
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:221)
+- &lt;js&gt;.fn(Unnamed:17)
+
+classpath:features/SignUp.feature:6
+classpath:features/SignUp.feature:7
+classpath:features/SignUp.feature:8
+classpath:features/SignUp.feature:9
+classpath:features/SignUp.feature:10
+classpath:features/SignUp.feature:11
+classpath:features/SignUp.feature:75
+classpath:features/SignUp.feature:76
+classpath:features/SignUp.feature:88
+classpath:features/SignUp.feature:89
+classpath:features/SignUp.feature:90
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
